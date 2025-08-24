@@ -135,4 +135,4 @@ Make sure you have:
 > * **⚡ Real-Time Processing**: Integrate with Kafka for live fraud detection.
 > * **🧾 Explainable AI**: Use SHAP / LIME for transparent model predictions.
 > * **💻 React Frontend**: Replace Flask templates with a modern JavaScript framework for a better UI/UX.
-> * **🔐 Authentication**: Implement a role-based secure login for analysts and administrators.
+> * **🔐 Authentication**: Implement a role-based secure login for analysts and administrators.    
