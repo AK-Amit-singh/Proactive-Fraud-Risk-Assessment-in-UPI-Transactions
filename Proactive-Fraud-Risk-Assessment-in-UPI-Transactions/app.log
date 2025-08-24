@@ -1,0 +1,47 @@
+WARNING:absl:Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+ERROR:app:Exception on /detect [POST]
+Traceback (most recent call last):
+  File "C:\Users\anshu\Downloads\1111upiFraudDetection-main\upiFraudDetection-main\venv\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\anshu\Downloads\1111upiFraudDetection-main\upiFraudDetection-main\venv\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\anshu\Downloads\1111upiFraudDetection-main\upiFraudDetection-main\venv\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\anshu\Downloads\1111upiFraudDetection-main\upiFraudDetection-main\venv\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "C:\Users\anshu\Downloads\1111upiFraudDetection-main\upiFraudDetection-main\app.py", line 365, in detect
+    return render_template('error.html', error="Invalid category or state.")
+  File "C:\Users\anshu\Downloads\1111upiFraudDetection-main\upiFraudDetection-main\venv\lib\site-packages\flask\templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\anshu\Downloads\1111upiFraudDetection-main\upiFraudDetection-main\venv\lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\anshu\Downloads\1111upiFraudDetection-main\upiFraudDetection-main\venv\lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\anshu\Downloads\1111upiFraudDetection-main\upiFraudDetection-main\venv\lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\anshu\Downloads\1111upiFraudDetection-main\upiFraudDetection-main\venv\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\anshu\Downloads\1111upiFraudDetection-main\upiFraudDetection-main\venv\lib\site-packages\flask\templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "C:\Users\anshu\Downloads\1111upiFraudDetection-main\upiFraudDetection-main\venv\lib\site-packages\flask\templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+INFO:werkzeug:192.168.33.180 - - [20/Jul/2025 23:10:08] "[35m[1mPOST /detect HTTP/1.1[0m" 500 -
+WARNING:absl:Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.33.180:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+WARNING:absl:Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.33.180:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+WARNING:absl:Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.33.180:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
