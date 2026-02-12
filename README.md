@@ -1,6 +1,6 @@
 
 
-# 🚀 Proactive Fraud Risk Assessment in UPI Transactions
+# 🚀 Proactive Fraud Risk Assessment in UPI Transactions ( Using Machine Learning )
 
 This project is a **full-stack web application** designed to detect fraudulent transactions within India’s **Unified Payments Interface (UPI)** system.  
 It leverages a **machine learning backend** to analyze transaction data and a **user-friendly web interface** to display the results, helping identify and flag suspicious activities proactively.
