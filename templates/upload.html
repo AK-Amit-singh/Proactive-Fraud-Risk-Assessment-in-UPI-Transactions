@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Proactive UPI Security System</title>
+  <link href="../static/img/favicon.png" rel="icon">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../static/css/style1.css" rel="stylesheet">
+  <style>
+    /* Animation for upload card */
+    .upload-card {
+      animation: fadeInUp 1s cubic-bezier(.68, -0.55, .27, 1.55) 0.3s backwards;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(52, 183, 167, 0.15);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(52, 183, 167, 0.08);
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .upload-btn {
+      animation: btnPulse 2s infinite;
+    }
+
+    @keyframes btnPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(52, 183, 167, 0.4);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(52, 183, 167, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(52, 183, 167, 0);
+      }
+    }
+
+    /* Animated floating shapes for hero */
+    .hero-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.12;
+      animation: heroFloat 7s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    .hero-shape.shape1 {
+      width: 120px;
+      height: 120px;
+      top: 18%;
+      left: 8%;
+      background: #34b7a7;
+      animation-delay: 0s;
+    }
+
+    .hero-shape.shape2 {
+      width: 80px;
+      height: 80px;
+      bottom: 18%;
+      right: 12%;
+      background: #51cdbe;
+      animation-delay: 2s;
+    }
+
+    .hero-shape.shape3 {
+      width: 60px;
+      height: 60px;
+      top: 65%;
+      left: 80%;
+      background: #dcf5f2;
+      animation-delay: 4s;
+    }
+
+    @keyframes heroTitleFade {
+      from {
+        opacity: 0;
+        transform: scale(0.98) translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes heroFloat {
+      0% {
+        transform: translateY(0) scale(1);
+      }
+
+      100% {
+        transform: translateY(-20px) scale(1.08);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+      <h1 class="col-lg-8"><a href="index.html"> <span>Proactive UPI Security System</span></a></h1>
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto" href="{{ url_for('first')}}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('chart')}}">Chart</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('prediction1')}}">Check</a></li>
+
+          {% if session.loggedin %}
+          <li><a class="nav-link scrollto" href="{{ url_for('upload')}}">Upload</a></li>
+          <li><a class="nav-link scrollto" href="{{ url_for('logout')}}"><b>Logout</b></a></li>
+          {% else %}
+          <li><a class="nav-link scrollto" href="{{ url_for('login')}}"><b>Admin Login</b></a></li>
+          {% endif %}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center justify-content-center" style="
+  min-height: 260px;
+  background: linear-gradient(120deg, #f3f4f7 0%, #e7e9ef 100%);
+  position: relative;
+  margin-top: 80px;
+">
+    <!-- Animated floating shapes -->
+    <div class="hero-shape shape1"></div>
+    <div class="hero-shape shape2"></div>
+    <div class="hero-shape shape3"></div>
+    <div class="container position-relative text-center text-lg-start">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h1 style="
+          font-size: 2.7rem;
+          font-weight: 700;
+          color: #290f9e;
+          text-shadow: 0 2px 12px rgba(52,183,167,0.12);
+          letter-spacing: 1px;
+          animation: heroTitleFade 1.2s cubic-bezier(.68,-0.55,.27,1.55) 0.2s both;
+        ">
+            Proactive Fraud Risk Assessment in UPI Transactions  <br>
+            <span style="color:#34b7a7; font-size:2rem; font-weight:600;">
+            Using Machine Learning Approaches
+            </span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Upload Section ======= -->
+  <section id="book-a-table" class="book-a-table">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title text-center">
+        <p>Upload</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="upload-card">
+            <form action="http://localhost:5000/preview" name="fs" id="fs" method="post" enctype="multipart/form-data">
+              <div class="mb-4">
+                <input type="file" name="datasetfile" id="file1" class="form-control" required />
+              </div>
+              <div class="d-grid">
+                <input type="submit" class="btn btn-primary btn-lg upload-btn" value="Upload">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright"></div>
+      <div class="credits"></div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/aos/aos.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+  <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/js/main.js"></script>
+
+  <!-- Auto-hide flash messages after 1 second -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(function() {
+        document.querySelectorAll('.alert').forEach(function(alert) {
+          alert.classList.remove('show');
+          alert.classList.add('fade');
+          setTimeout(function() {
+            alert.style.display = 'none';
+          }, 500); // fade out transition
+        });
+      }, 1000); // 1 second
+    });
+  </script>
+</body>
+
+</html>
